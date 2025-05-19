@@ -1,0 +1,29 @@
+<div class="categoryTitle">
+  <p class="top">KATEGORİLER</p>
+  <p class="name">Eğlence</p>
+</div>
+<div class="news-container">
+  <div class="news-item" *ngFor="let news of newsList">
+    <div>
+      <img
+        [src]="'https://picsum.photos/200?random=' + getRandomNumber()"
+        alt="news{{news.author}-img}"
+      />
+    </div>
+    <div class="news-title">{{ getDescriptionPart(news) }}</div>
+    <div class="news-author">{{ news.author }}</div>
+    <span
+      >{{ formatDate(news.publishedAt) }} <br />
+    </span>
+  </div>
+</div>
+
+<div class="pagination">
+  <button
+    *ngFor="let page of pageNumbers"
+    (click)="setPageActive(page)"
+    [ngClass]="{ 'active-page': activePage === page }"
+  >
+    {{ page }}
+  </button>
+</div>

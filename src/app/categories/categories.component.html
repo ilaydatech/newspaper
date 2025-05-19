@@ -1,0 +1,164 @@
+<div class="categories">
+  <h2>Filter Categories</h2>
+  <ul>
+    <li *ngFor="let category of categories">
+      <label *ngIf="!hiddenCategories[category]">
+        <input
+          type="checkbox"
+          [(ngModel)]="selectedCategories[category]"
+          (ngModelChange)="onCategorySelectionChange()"
+        />
+        {{ category }}
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedCategories['Business']" class="is-dunyasi-news">
+  <div class="categoryTitle">
+    <p class="name">Business</p>
+  </div>
+  <div class="news-container">
+    <div class="news-item" *ngFor="let news of categoryNews['Business']">
+      <div>
+        <img
+          [src]="'https://picsum.photos/130?random=' + getRandomNumber()"
+          alt="news{{news.author}-img}"
+        />
+      </div>
+      <div class="news-title">{{ getDescriptionPart(news) }}</div>
+      <div class="news-author">{{ news.author }}</div>
+    </div>
+  </div>
+  <button class="routeForMore" [routerLink]="['/category/Is-Dunyasi']">
+    More
+  </button>
+</div>
+
+<div *ngIf="selectedCategories['Entertainment']" class="eglence-news">
+  <div class="categoryTitle">
+    <p class="name">Entertainment</p>
+  </div>
+  <div class="news-container">
+    <div class="news-item" *ngFor="let news of categoryNews['Entertainment']">
+      <div>
+        <img
+          [src]="'https://picsum.photos/130?random=' + getRandomNumber()"
+          alt="news{{news.author}-img}"
+        />
+      </div>
+      <div class="news-title">{{ getDescriptionPart(news) }}</div>
+      <div class="news-author">{{ news.author }}</div>
+    </div>
+  </div>
+  <button class="routeForMore" [routerLink]="['/category/Eglence']">
+    More
+  </button>
+</div>
+
+<div *ngIf="selectedCategories['General']" class="genel-news">
+  <div class="categoryTitle">
+    <p class="name">GENERAL</p>
+  </div>
+  <div class="news-container">
+    <div class="news-item" *ngFor="let news of categoryNews['General']">
+      <div>
+        <img
+          [src]="'https://picsum.photos/130?random=' + getRandomNumber()"
+          alt="news{{news.author}-img}"
+        />
+      </div>
+      <div class="news-title">{{ getDescriptionPart(news) }}</div>
+      <div class="news-author">{{ news.author }}</div>
+    </div>
+  </div>
+  <button class="routeForMore" [routerLink]="['/category/Genel']">
+    More
+  </button>
+</div>
+
+<div *ngIf="selectedCategories['Health']" class="saglik-news">
+  <div class="categoryTitle">
+    <p class="name">Health</p>
+  </div>
+  <div class="news-container">
+    <div class="news-item" *ngFor="let news of categoryNews['Health']">
+      <div>
+        <img
+          [src]="'https://picsum.photos/130?random=' + getRandomNumber()"
+          alt="news{{news.author}-img}"
+        />
+      </div>
+      <div class="news-title">{{ getDescriptionPart(news) }}</div>
+      <div class="news-author">{{ news.author }}</div>
+    </div>
+  </div>
+  <button class="routeForMore" [routerLink]="['/category/Saglik']">
+    More
+  </button>
+</div>
+
+<div *ngIf="selectedCategories['Science']" class="bilim-news">
+  <div class="categoryTitle">
+    <p class="name">Science</p>
+  </div>
+  <div class="news-container">
+    <div class="news-item" *ngFor="let news of categoryNews['Science']">
+      <div>
+        <img
+          [src]="'https://picsum.photos/130?random=' + getRandomNumber()"
+          alt="news{{news.author}-img}"
+        />
+      </div>
+      <div class="news-title">{{ getDescriptionPart(news) }}</div>
+      <div class="news-author">{{ news.author }}</div>
+    </div>
+  </div>
+  <button class="routeForMore" [routerLink]="['/category/Bilim']">
+    More
+  </button>
+</div>
+
+<div *ngIf="selectedCategories['Sport']" class="spor-news">
+  <div class="categoryTitle">
+    <p class="name">Sport</p>
+  </div>
+  <div class="news-container">
+    <div class="news-item" *ngFor="let news of categoryNews['Sport']">
+      <div>
+        <img
+          [src]="'https://picsum.photos/130?random=' + getRandomNumber()"
+          alt="news{{news.author}-img}"
+        />
+      </div>
+      <div class="news-title">{{ getDescriptionPart(news) }}</div>
+      <div class="news-author">{{ news.author }}</div>
+    </div>
+  </div>
+  <button class="routeForMore" [routerLink]="['/category/Spor']">
+    More
+  </button>
+</div>
+
+<div *ngIf="selectedCategories['Technology']" class="teknoloji-news">
+  <div class="categoryTitle">
+    <p class="name">Technology</p>
+  </div>
+  <div class="news-container">
+    <div class="news-item" *ngFor="let news of categoryNews['Technology']">
+      <div>
+        <img
+          [src]="'https://picsum.photos/130?random=' + getRandomNumber()"
+          alt="news{{news.author}-img}"
+        />
+      </div>
+      <div class="news-title">{{ getDescriptionPart(news) }}</div>
+      <div class="news-author">{{ news.author }}</div>
+    </div>
+  </div>
+  <button class="routeForMore" [routerLink]="['/category/Teknoloji']">
+    More
+  </button>
+</div>
+
+<div [style.margin-top.px]="selectedCategoriesNotEmpty() ? 0 : 500"></div>

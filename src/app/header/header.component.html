@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="left-content">
+    <div class="name-container">
+      <span>ILAYDA SUMER</span>
+    </div>
+  </div>
+  <div class="right-content">
+    <input
+      class="placeholder"
+      type="text"
+      placeholder="Search..."
+      [(ngModel)]="searchQuery"
+    />
+    <button
+      class="searchButton"
+      (click)="searchQuery.length >= 2 && openSearchPage(searchQuery)"
+    >
+<span class="search-emoji">🔍</span>   
+ </button>
+  </div>
+</div>

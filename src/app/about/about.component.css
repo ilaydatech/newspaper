@@ -1,0 +1,52 @@
+
+body {
+    text-align: center; 
+  }
+  .container {
+    text-align: center; 
+    display: inline-block;
+  }
+  #about {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom:30px;
+    color: rgb(12, 40, 84);;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .section2{
+    clear: both;
+    margin-top: 50px;
+  }
+
+  .section2 .email img {
+    color: #afb6c7;
+    width: 24px;
+    height: 24px;
+  }
+
+  .section2 .phone img {
+    color: #afb6c7;
+    width: 24px;
+    height: 24px;
+  }
+
+  .section2 {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .email, .phone {
+    text-align: center; 
+    margin: 10px;
+  }
+
+  .emailText {
+    margin-top: 3px;
+  }
+
+  .phoneText {
+    margin-top: 3px;
+  }
+
